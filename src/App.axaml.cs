@@ -1,10 +1,10 @@
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
-using Grade_Management.ViewModels;
-using Grade_Management.Views;
+using ScholarTrack.ViewModels;
+using ScholarTrack.Views;
 
-namespace Grade_Management
+namespace ScholarTrack
 {
     public class App : Application
     {

@@ -1,7 +1,7 @@
 ﻿using Avalonia;
 using Avalonia.ReactiveUI;
 
-namespace Grade_Management
+namespace ScholarTrack
 {
     static class Program
     {

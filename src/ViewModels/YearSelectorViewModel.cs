@@ -1,4 +1,4 @@
-﻿namespace Grade_Management.ViewModels
+﻿namespace ScholarTrack.ViewModels
 {
     public class YearSelectorViewModel : ViewModelBase
     {

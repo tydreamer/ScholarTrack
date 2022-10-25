@@ -1,9 +1,9 @@
 using System;
 using Avalonia.Controls;
 using Avalonia.Controls.Templates;
-using Grade_Management.ViewModels;
+using ScholarTrack.ViewModels;
 
-namespace Grade_Management
+namespace ScholarTrack
 {
     public class ViewLocator : IDataTemplate
     {
