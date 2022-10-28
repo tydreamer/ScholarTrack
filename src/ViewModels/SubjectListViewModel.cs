@@ -13,10 +13,7 @@ namespace ScholarTrack.ViewModels
     public class SubjectListViewModel : ViewModelBase, IListViewModel<Subject>
     {
         private readonly bool[] _elementsVisibilities = { true, false, false }; 
-<<<<<<< HEAD
-        
-=======
->>>>>>> origin/main
+
         public SubjectListViewModel(IEnumerable<Subject> items)
         {
             Items = new ObservableCollection<Subject>(items);
