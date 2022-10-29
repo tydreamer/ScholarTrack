@@ -19,6 +19,7 @@ namespace ScholarTrack.ViewModels
         {
             GenerateExampleYear(); // TODO: Get rid of this, because it's only temporary to test the behaviour
             InitializeTopbarElements();
+            
             _content = Content = new YearListViewModel(Data.SchoolYears);
             _views.Add(_content);
             _content.ChangeTopbar();
