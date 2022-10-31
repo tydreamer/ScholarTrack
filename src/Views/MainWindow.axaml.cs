@@ -4,7 +4,6 @@ using Avalonia.Input;
 using Avalonia.Markup.Xaml;
 using ScholarTrack.Models;
 using ScholarTrack.ViewModels;
-using Microsoft.CodeAnalysis.CSharp.Syntax;
 
 namespace ScholarTrack.Views
 {
@@ -27,7 +26,7 @@ namespace ScholarTrack.Views
         {
             AvaloniaXamlLoader.Load(this);
         }
-        
+
         private void OnYearPressed(object? sender, PointerPressedEventArgs e)
         {
             _mainWindowModel ??= this.DataContext as MainWindowViewModel;
