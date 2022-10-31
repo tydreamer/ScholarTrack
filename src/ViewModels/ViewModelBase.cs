@@ -8,6 +8,7 @@ namespace ScholarTrack.ViewModels
     {
         protected MainWindow? MainWindowInstance { get; private set; }
         protected Controls? TopbarTexts { get; private set; }
+        protected internal ViewModelBase? AddPage { get; protected init; }
         
         protected void InitializeTopbarElements()
         {
