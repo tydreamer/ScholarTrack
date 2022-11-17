@@ -1,13 +1,17 @@
-﻿using Avalonia.Controls;
+using Avalonia;
+using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
 
-namespace ScholarTrack.Views
+namespace ScholarTrack.Views.AddPages
 {
-    public class AddSubjectView : UserControl
+    public class AddYearWindow : Window
     {
-        public AddSubjectView()
+        public AddYearWindow()
         {
             InitializeComponent();
+#if DEBUG
+            this.AttachDevTools();
+#endif
         }
 
         private void InitializeComponent()

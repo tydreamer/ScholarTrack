@@ -1,13 +1,17 @@
-﻿using Avalonia.Controls;
+using Avalonia;
+using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
 
 namespace ScholarTrack.Views
 {
-    public class AddGradeView : UserControl
+    public class AddGradeWindow : Window
     {
-        public AddGradeView()
+        public AddGradeWindow()
         {
             InitializeComponent();
+#if DEBUG
+            this.AttachDevTools();
+#endif
         }
 
         private void InitializeComponent()
