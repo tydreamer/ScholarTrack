@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.Diagnostics.CodeAnalysis;
 using ScholarTrack.Interfaces;
 using ScholarTrack.Models;
+using ScholarTrack.Views;
 
 namespace ScholarTrack.ViewModels
 {
@@ -16,7 +17,8 @@ namespace ScholarTrack.ViewModels
                   "and this leads to exceptions and unintended behaviour")]
         public SubjectListViewModel()
         {
-            AddPage = new AddSubjectViewModel();
+            AddPage = new AddSubjectWindow();
+            AddPageType = typeof(AddSubjectWindow);
         }
 
 #pragma warning disable 618
