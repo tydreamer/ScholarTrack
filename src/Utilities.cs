@@ -5,7 +5,7 @@ using System.Linq;
 using Avalonia.Media;
 using ScholarTrack.Interfaces;
 
-namespace ScholarTrack.Models
+namespace ScholarTrack
 {
     public static class Utilities
     {
