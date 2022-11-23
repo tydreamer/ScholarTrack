@@ -17,6 +17,7 @@ namespace ScholarTrack.ViewModels
         {
             AddPage = new AddGradeWindow();
             AddPageType = typeof(AddGradeWindow);
+            AddViewModelType = typeof(AddGradeViewModel);
         }
         
 #pragma warning disable 618
