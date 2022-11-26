@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ScholarTrack
+namespace ScholarTrack.ExtensionCollection
 {
     public static partial class Extensions
     {

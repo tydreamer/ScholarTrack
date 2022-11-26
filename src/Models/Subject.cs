@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Avalonia.Media;
 using ScholarTrack.Interfaces;
+using ScholarTrack.UtilityCollection;
 
 namespace ScholarTrack.Models
 {

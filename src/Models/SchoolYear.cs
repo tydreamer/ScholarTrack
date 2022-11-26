@@ -1,4 +1,6 @@
-﻿namespace ScholarTrack.Models
+﻿using ScholarTrack.UtilityCollection;
+
+namespace ScholarTrack.Models
 {
     public class SchoolYear
     {

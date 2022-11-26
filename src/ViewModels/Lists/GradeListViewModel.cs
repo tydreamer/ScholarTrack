@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.Diagnostics.CodeAnalysis;
 using ScholarTrack.Interfaces;
 using ScholarTrack.Models;
+using ScholarTrack.ViewModels.AddPages;
 using ScholarTrack.Views;
 
 namespace ScholarTrack.ViewModels
