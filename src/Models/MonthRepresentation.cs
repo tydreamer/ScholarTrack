@@ -1,4 +1,4 @@
-using ScholarTrack.Converter;
+using ScholarTrack.Converters;
 
 namespace ScholarTrack.Models
 {

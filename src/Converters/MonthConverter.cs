@@ -6,7 +6,7 @@ using ScholarTrack.ExtensionCollection;
 using ScholarTrack.UtilityCollection;
 using ScholarTrack.ViewModels.AddPages;
 
-namespace ScholarTrack.Converter
+namespace ScholarTrack.Converters
 {
     public class MonthConverter : IValueConverter
     {

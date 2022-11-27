@@ -2,7 +2,7 @@ using System;
 using System.Globalization;
 using Avalonia.Data.Converters;
 
-namespace ScholarTrack.Converter
+namespace ScholarTrack.Converters
 {
     public class IntStringConverter : IValueConverter
     {
