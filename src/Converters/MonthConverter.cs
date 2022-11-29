@@ -3,6 +3,7 @@ using System.Globalization;
 using Avalonia.Data.Converters;
 using ScholarTrack.Enums;
 using ScholarTrack.ExtensionCollection;
+using ScholarTrack.Models;
 using ScholarTrack.UtilityCollection;
 using ScholarTrack.ViewModels.AddPages;
 
@@ -18,59 +19,61 @@ namespace ScholarTrack.Converters
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            if (parameter is not AddGradeViewModel viewModel)
-                throw new ArgumentException("The type of the `parameter` argument should be `AddGradeViewModel`.");
+            // if (parameter is not AddGradeViewModel viewModel)
+            //     throw new ArgumentException("The type of the `parameter` argument should be `AddGradeViewModel`.");
 
-            switch (value)
+            if (value is not string monthName) 
+                return ConversionFailed();
+            
+            // ReSharper disable once InlineOutVariableDeclaration
+            int monthNumber;
+            if (int.TryParse(monthName, out monthNumber))
             {
-                case int monthNumber:
+                if (!Utilities.ValidateDate(1, monthNumber, Utilities.TodaysYear, out var protocol)
+                    && protocol.CustomHasFlag(DateType.Month))
                 {
-                    if (!Utilities.ValidateDate(1, monthNumber, Utilities.TodaysYear, out var protocol)
-                        && protocol.CustomHasFlag(DateType.Month))
-                    {
-                        goto default;
-                    }
-                    viewModel.SelectedMonth.Month = monthNumber;
-                    return viewModel.SelectedMonth;
+                    return ConversionFailed();
                 }
-                case string monthName:
-                {
-                    if (TryConvertMonth(monthName, out int monthNumber) &&
-                        Utilities.ValidateDate(1, monthNumber, Utilities.TodaysYear, out _))
-                    {
-                        viewModel.SelectedMonth.MonthName = monthName;
-                        return viewModel.SelectedMonth;
-                    }
-
-                    goto default;
-                }
-                default:
-                {
-                    // TODO: Red outline/border around corresponding box in the view
-                    System.Diagnostics.Trace.WriteLine("Month is invalid!");
-
-                    return value;
-                }
+                // viewModel.SelectedMonth.Month = monthNumber;
+                // return viewModel.SelectedMonth;
+                return new MonthRepresentation(monthNumber);
+            } 
+            else if (TryConvertMonth(monthName, out monthNumber) &&
+                     Utilities.ValidateDate(1, monthNumber, Utilities.TodaysYear, out _))
+            {
+                // viewModel.SelectedMonth.MonthName = monthName;
+                // return viewModel.SelectedMonth;
+                return new MonthRepresentation(monthName);
             }
+
+            return ConversionFailed();
         }
 
         internal static string ConvertMonth(int month)
         {
             var date = new DateTime(Utilities.TodaysYear, month, Utilities.TodaysDay);
             // TODO: Use currently selected language as culture once it has been implemented
-            return date.ToString("MMM", CultureInfo.CurrentCulture);
+            return date.ToString("MMMM", CultureInfo.CurrentCulture);
         }
 
         internal static bool TryConvertMonth(string month, out int monthNumber)
         {
             monthNumber = 0;
             // TODO: Use currently selected language as culture once it has been implemented
-            if (!DateTime.TryParseExact(month, "MMMM", CultureInfo.CurrentCulture, DateTimeStyles.None, 
-                out var dateTime)) 
+            if (!DateTime.TryParseExact(month, "MMMM", CultureInfo.CurrentCulture, 
+                DateTimeStyles.None, out var dateTime)) 
                 return false;
             
             monthNumber = dateTime.Month;
             return true;
+        }
+
+        private static MonthRepresentation ConversionFailed()
+        {
+            // TODO: Red outline/border around corresponding box in the view
+            System.Diagnostics.Trace.WriteLine("Month is invalid!");
+
+            return new MonthRepresentation(string.Empty);
         }
     }
 }
