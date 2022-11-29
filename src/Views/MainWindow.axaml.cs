@@ -4,10 +4,11 @@ using Avalonia.Input;
 using Avalonia.Markup.Xaml;
 using ScholarTrack.Models;
 using ScholarTrack.ViewModels;
+using ScholarTrack.ViewModels.Lists;
 
 namespace ScholarTrack.Views
 {
-    public partial class MainWindow : Window
+    public class MainWindow : Window
     {
         private MainWindowViewModel? _mainWindowModel;
 

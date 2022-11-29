@@ -3,7 +3,7 @@ using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
 using ScholarTrack.ViewModels.AddPages;
 
-namespace ScholarTrack.Views
+namespace ScholarTrack.Views.AddPages
 {
     public class AddGradeWindow : Window
     {

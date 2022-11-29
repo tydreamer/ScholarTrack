@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using ScholarTrack.Interfaces;
 using ScholarTrack.Models;
+using ScholarTrack.ViewModels.AddPages;
 using ScholarTrack.Views.AddPages;
 
-namespace ScholarTrack.ViewModels
+namespace ScholarTrack.ViewModels.Lists
 {
-    public class YearListViewModel : ViewModelBase, IListViewModel<SchoolYear>
+    public class YearListViewModel : ListViewModelBase, IListViewModel<SchoolYear>
     {
         [Obsolete("Do NOT use this constructor, because it leaves the collection of school years uninitialized " +
                   "and this leads to exceptions and unintended behaviour")]

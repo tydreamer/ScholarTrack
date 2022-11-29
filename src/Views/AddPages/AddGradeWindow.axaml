@@ -5,7 +5,7 @@
         xmlns:addPages="clr-namespace:ScholarTrack.ViewModels.AddPages"
         xmlns:converter="clr-namespace:ScholarTrack.Converters"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-        x:Class="ScholarTrack.Views.AddGradeWindow"
+        x:Class="ScholarTrack.Views.AddPages.AddGradeWindow"
         Title="Add a new grade"
         WindowStartupLocation="CenterOwner"
         Width="750"

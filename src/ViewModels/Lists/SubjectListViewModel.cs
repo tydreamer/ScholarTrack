@@ -4,12 +4,13 @@ using System.Collections.ObjectModel;
 using System.Diagnostics.CodeAnalysis;
 using ScholarTrack.Interfaces;
 using ScholarTrack.Models;
-using ScholarTrack.Views;
+using ScholarTrack.ViewModels.AddPages;
+using ScholarTrack.Views.AddPages;
 
-namespace ScholarTrack.ViewModels
+namespace ScholarTrack.ViewModels.Lists
 {
     [SuppressMessage("ReSharper", "ClassNeverInstantiated.Global")]
-    public class SubjectListViewModel : ViewModelBase, IListViewModel<Subject>
+    public class SubjectListViewModel : ListViewModelBase, IListViewModel<Subject>
     {
         private readonly bool[] _elementsVisibilities = { true, false, false };
 

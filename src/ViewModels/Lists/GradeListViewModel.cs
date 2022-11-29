@@ -5,12 +5,12 @@ using System.Diagnostics.CodeAnalysis;
 using ScholarTrack.Interfaces;
 using ScholarTrack.Models;
 using ScholarTrack.ViewModels.AddPages;
-using ScholarTrack.Views;
+using ScholarTrack.Views.AddPages;
 
-namespace ScholarTrack.ViewModels
+namespace ScholarTrack.ViewModels.Lists
 {
     [SuppressMessage("ReSharper", "ClassNeverInstantiated.Global")]
-    public class GradeListViewModel : ViewModelBase, IListViewModel<Grade>
+    public class GradeListViewModel : ListViewModelBase, IListViewModel<Grade>
     {
         [Obsolete("Do NOT use this constructor, because it leaves the collection of grades uninitialized " +
                          "and this leads to exceptions and unintended behaviour.")]

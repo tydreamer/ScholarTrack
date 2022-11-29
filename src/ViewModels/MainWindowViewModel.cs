@@ -7,14 +7,15 @@ using Avalonia.Controls;
 using Avalonia.Media;
 using ScholarTrack.Interfaces;
 using ScholarTrack.Models;
+using ScholarTrack.ViewModels.Lists;
 using ReactiveUI;
 
 namespace ScholarTrack.ViewModels
 {
     public class MainWindowViewModel : ViewModelBase
     {
-        private ViewModelBase _content;
-        private readonly List<ViewModelBase> _views = new();
+        private ListViewModelBase _content;
+        private readonly List<ListViewModelBase> _views = new();
         private readonly Button _addButton;
         
         public MainWindowViewModel()
@@ -31,13 +32,13 @@ namespace ScholarTrack.ViewModels
 
         internal static SchoolYear? CurrentYear { get; set; }
         
-        internal ViewModelBase Content
+        internal ListViewModelBase Content
         {
             get => _content;
             private set => this.RaiseAndSetIfChanged(ref _content, value);
         }
         
-        internal ViewModelBase[] Views => _views.ToArray();
+        internal ListViewModelBase[] Views => _views.ToArray();
         
         internal void OpenSubject(Subject subject)
         {
@@ -77,7 +78,8 @@ namespace ScholarTrack.ViewModels
             _content.AddPage.Closing += closingDel;
         }
 
-        internal void SwitchPage<T, TItems>(IEnumerable<TItems> items) where T : ViewModelBase, IListViewModel<TItems>
+        internal void SwitchPage<T, TItems>(IEnumerable<TItems> items) where T : ListViewModelBase, 
+        IListViewModel<TItems>
         {
             if (_views.Any(x => x.GetType() == typeof(T)))
             {
