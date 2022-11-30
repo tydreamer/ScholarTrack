@@ -5,6 +5,7 @@ using System.Diagnostics.CodeAnalysis;
 using ScholarTrack.Interfaces;
 using ScholarTrack.Models;
 using ScholarTrack.ViewModels.AddPages;
+using ScholarTrack.ViewModels.BaseClasses;
 using ScholarTrack.Views.AddPages;
 
 namespace ScholarTrack.ViewModels.Lists

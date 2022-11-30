@@ -4,6 +4,7 @@ using ScholarTrack.Enums;
 using ScholarTrack.ExtensionCollection;
 using ScholarTrack.Models;
 using ScholarTrack.UtilityCollection;
+using ScholarTrack.ViewModels.BaseClasses;
 using ReactiveUI;
 
 namespace ScholarTrack.ViewModels.AddPages

@@ -7,6 +7,7 @@ using Avalonia.Controls;
 using Avalonia.Media;
 using ScholarTrack.Interfaces;
 using ScholarTrack.Models;
+using ScholarTrack.ViewModels.BaseClasses;
 using ScholarTrack.ViewModels.Lists;
 using ReactiveUI;
 

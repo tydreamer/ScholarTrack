@@ -1,7 +1,7 @@
 using System;
 using Avalonia.Controls;
 
-namespace ScholarTrack.ViewModels
+namespace ScholarTrack.ViewModels.BaseClasses
 {
     public class ListViewModelBase : ViewModelBase
     {

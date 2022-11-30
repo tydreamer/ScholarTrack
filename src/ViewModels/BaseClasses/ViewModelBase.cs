@@ -2,7 +2,7 @@
 using ScholarTrack.Views;
 using ReactiveUI;
 
-namespace ScholarTrack.ViewModels
+namespace ScholarTrack.ViewModels.BaseClasses
 {
     public class ViewModelBase : ReactiveObject
     {

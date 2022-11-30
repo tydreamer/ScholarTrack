@@ -1,4 +1,6 @@
-﻿namespace ScholarTrack.ViewModels.AddPages
+﻿using ScholarTrack.ViewModels.BaseClasses;
+
+namespace ScholarTrack.ViewModels.AddPages
 {
     public class AddSubjectViewModel : ViewModelBase
     {

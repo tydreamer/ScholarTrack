@@ -1,7 +1,7 @@
 using System;
 using Avalonia.Controls;
 using Avalonia.Controls.Templates;
-using ScholarTrack.ViewModels;
+using ScholarTrack.ViewModels.BaseClasses;
 
 namespace ScholarTrack
 {
