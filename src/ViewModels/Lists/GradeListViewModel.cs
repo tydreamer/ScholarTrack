@@ -30,6 +30,7 @@ namespace ScholarTrack.ViewModels.Lists
         }
         
         public ObservableCollection<Grade>? Items { get; set; }
+        public bool EmptyCollection => Items?.Count == 0;
 
         internal override void ChangeTopbar()
         {

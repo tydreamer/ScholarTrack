@@ -1,11 +1,11 @@
 ﻿using Avalonia.Markup.Xaml;
 using ScholarTrack.Models;
 
-namespace ScholarTrack.Views
+namespace ScholarTrack.Views.Lists
 {
-    public class YearListView : DragControl
+    public class SubjectListView : DragControl
     {
-        public YearListView()
+        public SubjectListView()
         {
             InitializeComponent();
         }
