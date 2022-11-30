@@ -16,7 +16,7 @@ namespace ScholarTrack.Converters
             if (value is string stringValue && int.TryParse(stringValue, out int intValue))
                 return intValue;
             
-            return 0;
+            return -1;
         }
     }
 }
