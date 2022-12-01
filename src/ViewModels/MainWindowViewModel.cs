@@ -40,6 +40,11 @@ namespace ScholarTrack.ViewModels
         }
         
         internal ListViewModelBase[] Views => _views.ToArray();
+
+        internal void OpenGrade(Grade grade)
+        {
+            
+        }
         
         internal void OpenSubject(Subject subject)
         {

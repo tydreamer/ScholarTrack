@@ -1,5 +1,6 @@
 ﻿using System;
 using ScholarTrack.Interfaces;
+using ScholarTrack.UtilityCollection;
 
 namespace ScholarTrack.Models
 {
@@ -17,6 +18,7 @@ namespace ScholarTrack.Models
         }
         
         public float GradeValue { get; private set; }
+        public float RoundedGrade => (float)Math.Round(GradeValue, 2);
         public float Weighting { get; private set; }
         public bool Counts { get; private set; }
         internal string Name { get; private set; }
