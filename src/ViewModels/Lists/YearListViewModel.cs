@@ -6,6 +6,7 @@ using ScholarTrack.Models;
 using ScholarTrack.ViewModels.AddPages;
 using ScholarTrack.ViewModels.BaseClasses;
 using ScholarTrack.Views.AddPages;
+using ReactiveUI;
 
 namespace ScholarTrack.ViewModels.Lists
 {
@@ -25,6 +26,7 @@ namespace ScholarTrack.ViewModels.Lists
 #pragma warning restore 618
         {
             Items = new ObservableCollection<SchoolYear>(years);
+            Items.CollectionChanged += (sender, args) => this.RaisePropertyChanged(nameof(EmptyCollection));
             InitializeTopbarElements();
         }
 
