@@ -1,4 +1,5 @@
 ﻿using Avalonia.Media;
+using ScholarTrack.Models;
 using ScholarTrack.ViewModels.BaseClasses;
 
 namespace ScholarTrack.ViewModels.AddPages
@@ -13,6 +14,23 @@ namespace ScholarTrack.ViewModels.AddPages
         }
 
         protected override bool DataComplete => !string.IsNullOrEmpty(ElementName) 
-                                                && !float.IsNaN(ElementWeighting);
+                                                && !float.IsNaN(ElementWeighting)
+                                                && DataChanged();
+        
+        internal Subject? EditedSubject { get; set; } // TODO: When editing year, overwrite this property with `Subject`
+
+        protected internal override void StopEditing()
+        {
+            EditedSubject = null;
+        }
+
+        private bool DataChanged()
+        {
+            if (EditedSubject is null)
+                return true;
+
+            return ElementName is not null && (!ElementName.Trim().Equals(EditedSubject.Name.Trim()) 
+                                               || !ElementWeighting.Equals(EditedSubject.Weighting));
+        }
     }
 }

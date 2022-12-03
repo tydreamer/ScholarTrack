@@ -1,4 +1,5 @@
 ﻿using Avalonia.Media;
+using ScholarTrack.Models;
 using ScholarTrack.ViewModels.BaseClasses;
 
 namespace ScholarTrack.ViewModels.AddPages
@@ -11,6 +12,21 @@ namespace ScholarTrack.ViewModels.AddPages
             EditPageText(AddPageAction.Create, this.GetType());
         }
 
-        protected override bool DataComplete => !string.IsNullOrEmpty(ElementName);
+        protected override bool DataComplete => !string.IsNullOrEmpty(ElementName) && DataChanged();
+
+        internal SchoolYear? EditedYear { get; set; } // TODO: When editing year, overwrite this property with `SchoolYear`
+        
+        protected internal override void StopEditing()
+        {
+            EditedYear = null;
+        }
+
+        private bool DataChanged()
+        {
+            if (EditedYear is null)
+                return true;
+
+            return ElementName is not null && !ElementName.Trim().Equals(EditedYear.Name.Trim());
+        }
     }
 }
