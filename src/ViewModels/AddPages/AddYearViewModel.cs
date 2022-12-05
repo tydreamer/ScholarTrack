@@ -16,6 +16,12 @@ namespace ScholarTrack.ViewModels.AddPages
 
         internal SchoolYear? EditedYear { get; set; } // TODO: When editing year, overwrite this property with `SchoolYear`
         
+        protected override void CreateElement()
+        {
+            base.CreateElement();
+            EditedYear = null;
+        }
+        
         protected internal override void StopEditing()
         {
             EditedYear = null;
