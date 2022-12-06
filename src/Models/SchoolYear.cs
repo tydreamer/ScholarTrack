@@ -1,4 +1,5 @@
-﻿using ScholarTrack.UtilityCollection;
+﻿using System.Text.Json.Serialization;
+using ScholarTrack.UtilityCollection;
 
 namespace ScholarTrack.Models
 {
@@ -9,9 +10,13 @@ namespace ScholarTrack.Models
             this.Name = name;
             this.Subjects = subjects;
         }
-
+        
+        [JsonInclude]
+        public string Name { get; init; }
+        
+        [JsonInclude]
+        public Subject[] Subjects { get; init; }
+        
         internal float Average => Utilities.GetAverage(Subjects, true);
-        internal string Name { get; init; }
-        internal Subject[] Subjects { get; init; }
     }
 }
