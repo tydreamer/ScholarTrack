@@ -5,6 +5,7 @@ namespace ScholarTrack.Models
 {
     public class SchoolYear
     {
+        [JsonConstructor]
         public SchoolYear(string name, Subject[] subjects)
         {
             this.Name = name;
