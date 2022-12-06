@@ -18,7 +18,6 @@ namespace ScholarTrack.ViewModels.Lists
                   "and this leads to exceptions and unintended behaviour")]
         public YearListViewModel()
         {
-            AddPage = new AddYearWindow();
             AddPageType = typeof(AddYearWindow);
             AddViewModelType = typeof(AddYearViewModel);
         }

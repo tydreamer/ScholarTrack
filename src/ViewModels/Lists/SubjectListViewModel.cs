@@ -19,7 +19,6 @@ namespace ScholarTrack.ViewModels.Lists
                   "and this leads to exceptions and unintended behaviour")]
         public SubjectListViewModel()
         {
-            AddPage = new AddSubjectWindow();
             AddPageType = typeof(AddSubjectWindow);
             AddViewModelType = typeof(AddSubjectViewModel);
         }
