@@ -1,4 +1,5 @@
 ﻿using Avalonia.Media;
+using ScholarTrack.Interfaces;
 using ScholarTrack.Models;
 using ScholarTrack.ViewModels.BaseClasses;
 
@@ -19,9 +20,24 @@ namespace ScholarTrack.ViewModels.AddPages
         
         internal Subject? EditedSubject { get; set; } // TODO: When editing year, overwrite this property with `Subject`
         
-        protected override void CreateElement()
+        protected override void CreateElement(IListViewModel<IElement> viewModel)
         {
-            base.CreateElement();
+            if (ElementName is null)
+                return;
+            
+            if (EditedSubject is null)
+            {
+                var currentYear = MainWindowViewModel.CurrentYear;
+                if (currentYear is null)
+                    return;
+                
+                var subject = new Subject(ElementName, ElementWeighting, "#fcba03", ElementCounts); // TODO: Use selected color
+                currentYear.Subjects.Add(subject);
+            }
+            else
+                EditedSubject.Edit(ElementName, ElementWeighting, "#fcba03", ElementCounts); // TODO: Use selected color
+
+            base.CreateElement(viewModel);
             EditedSubject = null;
         }
 

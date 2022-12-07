@@ -1,4 +1,5 @@
 ﻿using Avalonia.Media;
+using ScholarTrack.Interfaces;
 using ScholarTrack.Models;
 using ScholarTrack.ViewModels.BaseClasses;
 
@@ -16,9 +17,23 @@ namespace ScholarTrack.ViewModels.AddPages
 
         internal SchoolYear? EditedYear { get; set; } // TODO: When editing year, overwrite this property with `SchoolYear`
         
-        protected override void CreateElement()
+        protected override void CreateElement(IListViewModel<IElement> viewModel)
         {
-            base.CreateElement();
+            if(ElementName is null)
+                return;
+            
+            if (EditedYear is null)
+            {
+                if (DataManager.SchoolYears is null)
+                    return;
+                
+                var year = new SchoolYear(ElementName);
+                DataManager.SchoolYears.Add(year);
+            }
+            else
+                EditedYear.Edit(ElementName);
+            
+            base.CreateElement(viewModel);
             EditedYear = null;
         }
         
