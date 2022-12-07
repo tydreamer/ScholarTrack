@@ -18,6 +18,7 @@ namespace ScholarTrack.ViewModels.Lists
                   "and this leads to exceptions and unintended behaviour")]
         public YearListViewModel()
         {
+            Instance = this;
             AddPageType = typeof(AddYearWindow);
             AddViewModelType = typeof(AddYearViewModel);
         }
@@ -41,6 +42,8 @@ namespace ScholarTrack.ViewModels.Lists
             }
         }
         public bool EmptyCollection => Items?.Count == 0;
+        
+        internal static YearListViewModel? Instance { get; private set; }
 
         protected internal override void ChangeTopbar()
         {
