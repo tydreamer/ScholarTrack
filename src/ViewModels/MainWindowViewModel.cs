@@ -175,7 +175,7 @@ namespace ScholarTrack.ViewModels
                 _addButton.IsVisible = true;
                 window.Closing -= closingDel;
                 if (window.DataContext is AddViewModelBase viewModel)
-                    viewModel.StopEditing();
+                    viewModel.EraseData();
             };
             window.Closing += closingDel;
         }
