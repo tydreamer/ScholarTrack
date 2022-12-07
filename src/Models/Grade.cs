@@ -32,6 +32,9 @@ namespace ScholarTrack.Models
         [JsonInclude]
         public bool Counts { get; private set; }
 
+        [JsonIgnore] 
+        public int ElementCount => 1;
+
         internal float RoundedGrade => (float)Math.Round(GradeValue, 2);
         internal string DateString => Date.ToString("dd.MM.yyyy", CultureInfo.CurrentCulture);
 
