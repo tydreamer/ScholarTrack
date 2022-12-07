@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using ScholarTrack.ExtensionCollection;
 using ScholarTrack.Interfaces;
 using ScholarTrack.Models;
 using ScholarTrack.ViewModels.AddPages;
@@ -50,6 +51,12 @@ namespace ScholarTrack.ViewModels.Lists
             base.ChangeTopbar();
             foreach (var control in TopbarTexts!)
                 control.IsVisible = false;
+        }
+        
+        private void RemoveElement(SchoolYear year)
+        {
+            DataManager.SchoolYears.SafeRemove(year);
+            UpdateVisualOnChange(this, DataManager.SchoolYears);
         }
     }
 }

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Diagnostics.CodeAnalysis;
+using ScholarTrack.ExtensionCollection;
 using ScholarTrack.Interfaces;
 using ScholarTrack.Models;
 using ScholarTrack.ViewModels.AddPages;
@@ -51,6 +51,16 @@ namespace ScholarTrack.ViewModels.Lists
             base.ChangeTopbar();
             foreach (var grade in TopbarTexts!)
                 grade.IsVisible = true;
+        }
+        
+        private void RemoveElement(Grade grade)
+        {
+            var currentSubject = MainWindowViewModel.CurrentSubject;
+            if (currentSubject is null)
+                return;
+            
+            currentSubject.Grades.SafeRemove(grade);
+            UpdateVisualOnChange(this, currentSubject.Grades);
         }
     }
 }
