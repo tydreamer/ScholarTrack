@@ -199,6 +199,7 @@ namespace ScholarTrack.ViewModels.AddPages
                 EditedGrade.Edit(ElementName, _elementGrade, ElementWeighting, _tempSelectedDate.Value, ElementCounts);
 
             EditedGrade = null;
+            CloseAddWindow();
             DataManager.SaveData();
         }
 

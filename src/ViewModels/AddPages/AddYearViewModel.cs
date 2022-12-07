@@ -39,6 +39,7 @@ namespace ScholarTrack.ViewModels.AddPages
                 EditedYear.Edit(ElementName);
             
             EditedYear = null;
+            CloseAddWindow();
             DataManager.SaveData();
         }
         
