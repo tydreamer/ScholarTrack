@@ -1,22 +1,30 @@
 ﻿using Avalonia.Media;
 using ScholarTrack.ExtensionCollection;
+using ScholarTrack.Interfaces;
 using ScholarTrack.Models;
 using ScholarTrack.ViewModels.BaseClasses;
 using ScholarTrack.ViewModels.Lists;
 
 namespace ScholarTrack.ViewModels.AddPages
 {
-    public class AddYearViewModel : AddViewModelBase
+    public class AddYearViewModel : AddViewModelBase, IAddViewModel<SchoolYear>
     {
         public AddYearViewModel()
         {
             BorderBrushes = new SolidColorBrush[] { new(IncompleteColor) };
-            EditPageText(AddPageAction.Create, this.GetType());
+            EditPageText(AddPageAction.Create, "School Year");
         }
 
         protected override bool DataComplete => !string.IsNullOrEmpty(ElementName) && DataChanged();
 
         internal SchoolYear? EditedYear { get; set; } // TODO: When editing year, overwrite this property with `SchoolYear`
+
+        public void EditElement(SchoolYear year)
+        {
+            EditedYear = year;
+            EditPageText(AddPageAction.Edit, "School Year", year.Name);
+            ElementName = year.Name;
+        }
         
         protected internal override void EraseData()
         {
