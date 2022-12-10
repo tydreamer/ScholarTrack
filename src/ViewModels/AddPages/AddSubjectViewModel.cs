@@ -5,11 +5,14 @@ using ScholarTrack.Interfaces;
 using ScholarTrack.Models;
 using ScholarTrack.ViewModels.BaseClasses;
 using ScholarTrack.ViewModels.Lists;
+using ReactiveUI;
 
 namespace ScholarTrack.ViewModels.AddPages
 {
     public class AddSubjectViewModel : AddViewModelBase, IAddViewModel<Subject>
     {
+        private bool _wishGradeEnabled;
+        
         public AddSubjectViewModel()
         {
             BorderBrushes = new SolidColorBrush[] { new(IncompleteColor), new(IncompleteColor) };
@@ -21,7 +24,13 @@ namespace ScholarTrack.ViewModels.AddPages
                                                 && !float.IsNaN(ElementWeighting)
                                                 && DataChanged();
         
-        internal Subject? EditedSubject { get; set; } // TODO: When editing year, overwrite this property with `Subject`
+        internal bool WishGradeEnabled
+        {
+            get => _wishGradeEnabled; 
+            set => this.RaiseAndSetIfChanged(ref _wishGradeEnabled, value);
+        }
+        
+        private Subject? EditedSubject { get; set; } // TODO: When editing year, overwrite this property with `Subject`
 
         public void EditElement(Subject subject)
         {
