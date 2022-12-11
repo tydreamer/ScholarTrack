@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text.Json.Serialization;
+using ScholarTrack.ExtensionCollection;
 using ScholarTrack.Interfaces;
 using ScholarTrack.UtilityCollection;
 
@@ -21,7 +23,7 @@ namespace ScholarTrack.Models
         public string Name { get; private set; }
 
         [JsonInclude] 
-        public List<Subject> Subjects { get; init; } = new();
+        public List<Subject> Subjects { get; private set; } = new();
         
         internal float Average => Utilities.GetAverage(Subjects, true);
 
@@ -29,6 +31,8 @@ namespace ScholarTrack.Models
         {
             if (Clone() is not SchoolYear duplicate)
                 return null;
+
+            duplicate.Subjects = duplicate.Subjects.Clone().ToList();
             DataManager.SchoolYears.Add(duplicate);
 
             return DataManager.SchoolYears as IEnumerable<T>;

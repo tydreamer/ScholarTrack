@@ -1,4 +1,6 @@
+using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace ScholarTrack.ExtensionCollection
 {
@@ -25,5 +27,8 @@ namespace ScholarTrack.ExtensionCollection
             if (list.Contains(element))
                 list.Remove(element);
         }
+
+        public static IEnumerable<T> Clone<T>(this IEnumerable<T> list) where T : ICloneable 
+            => list.Select(x => (T)x.Clone());
     }
 }
