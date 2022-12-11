@@ -7,6 +7,7 @@ using ScholarTrack.Models;
 using ScholarTrack.ViewModels.AddPages;
 using ScholarTrack.ViewModels.BaseClasses;
 using ScholarTrack.Views.AddPages;
+using ScholarTrack.Views.TargetGrade;
 using ReactiveUI;
 
 namespace ScholarTrack.ViewModels.Lists
@@ -15,6 +16,7 @@ namespace ScholarTrack.ViewModels.Lists
     {
         private readonly bool[] _elementsVisibilities = { true, false, false };
         private ObservableCollection<Subject>? _items;
+        private TargetGradeViewModel? _targetGradeViewModel;
 
         [Obsolete("Do NOT use this constructor, because it leaves the collection of subjects uninitialized " +
                   "and this leads to exceptions and unintended behaviour")]
@@ -64,6 +66,15 @@ namespace ScholarTrack.ViewModels.Lists
             
             currentYear.Subjects.SafeRemove(subject);
             UpdateVisualOnChange(this, currentYear.Subjects);
+        }
+
+        private void OpenTargetGradeCalc()
+        {
+            var window = new TargetGradeWindow();
+            _targetGradeViewModel ??= new TargetGradeViewModel();
+            window.DataContext = _targetGradeViewModel;
+            
+            ShowDialog(window, MainWindowInstance, this, 0);
         }
     }
 }

@@ -1,10 +1,5 @@
 using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using Avalonia.Controls;
 using Avalonia.Media;
-using ScholarTrack.Interfaces;
-using ScholarTrack.Models;
 using ScholarTrack.ViewModels.AddPages;
 using ReactiveUI;
 
@@ -112,7 +107,7 @@ namespace ScholarTrack.ViewModels.BaseClasses
             ButtonText = $"{prefix} {type}";
         }
 
-        protected internal virtual void EraseData()
+        protected override void EraseData()
         {
             ElementName = string.Empty;
             ElementWeightingString = string.Empty;
