@@ -70,8 +70,10 @@ namespace ScholarTrack.ViewModels.Lists
         
         private void OpenTargetGradeCalc()
         {
+            if (Items is null)
+                return;
             var window = new TargetGradeWindow();
-            _targetGradeViewModel ??= new TargetGradeWindowModel();
+            _targetGradeViewModel ??= new TargetGradeWindowModel(Items);
             window.DataContext = _targetGradeViewModel;
             
             ShowDialog(window, MainWindowInstance, this, 0);
