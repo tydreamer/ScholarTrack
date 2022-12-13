@@ -59,7 +59,7 @@ namespace ScholarTrack.ViewModels.BaseClasses
             window.Closing += closingDel;
         }
 
-        protected virtual void EraseData() { }
+        protected internal virtual void EraseData() { }
         
         private void CloseAddWindow()
         {

@@ -26,7 +26,7 @@ namespace ScholarTrack.ViewModels.AddPages
             ElementName = year.Name;
         }
         
-        protected override void EraseData()
+        protected internal override void EraseData()
         {
             base.EraseData();
             EditedYear = null;

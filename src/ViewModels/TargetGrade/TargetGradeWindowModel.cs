@@ -81,6 +81,7 @@ namespace ScholarTrack.ViewModels.TargetGrade
                 Content = (ViewModelBase)Activator.CreateInstance(type)!;
                 _viewModels.Add(_content);
             }
+            _content.EraseData();
         }
     }
 }
