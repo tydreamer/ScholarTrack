@@ -6,9 +6,7 @@ using ScholarTrack.Interfaces;
 using ScholarTrack.Models;
 using ScholarTrack.ViewModels.AddPages;
 using ScholarTrack.ViewModels.BaseClasses;
-using ScholarTrack.ViewModels.TargetGrade;
 using ScholarTrack.Views.AddPages;
-using ScholarTrack.Views.TargetGrade;
 using ReactiveUI;
 
 namespace ScholarTrack.ViewModels.Lists
