@@ -44,8 +44,10 @@ namespace ScholarTrack.ViewModels.BaseClasses
             CatchClosingWindow(window, callerViewModel);
             return window;
         }
+        
+        protected internal virtual void EraseData() { }
 
-        private void CatchClosingWindow(Window window, ViewModelBase callerViewModel)
+        private static void CatchClosingWindow(Window window, ViewModelBase callerViewModel)
         {
             EventHandler<CancelEventArgs>? closingDel = null;
             closingDel = delegate
@@ -59,8 +61,6 @@ namespace ScholarTrack.ViewModels.BaseClasses
             window.Closing += closingDel;
         }
 
-        protected internal virtual void EraseData() { }
-        
         private void CloseAddWindow()
         {
             CurrentAddWindow?.Close();

@@ -1,10 +1,8 @@
 using System;
 using System.Collections.Generic;
-using System.Globalization;
 using System.Linq;
 using ScholarTrack.Interfaces;
 using ScholarTrack.Models;
-using ScholarTrack.UtilityCollection;
 using ScholarTrack.ViewModels.BaseClasses;
 using ReactiveUI;
 
