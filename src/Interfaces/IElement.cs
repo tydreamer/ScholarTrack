@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 
 namespace ScholarTrack.Interfaces
@@ -6,5 +7,6 @@ namespace ScholarTrack.Interfaces
     {
         string Name { get; }
         IEnumerable<T>? Duplicate<T>() where T : IElement;
+        void ChangeButtonStyle(Type styleType);
     }
 }

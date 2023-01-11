@@ -10,13 +10,16 @@ using ScholarTrack.Interfaces;
 using ScholarTrack.Models.Settings;
 using ScholarTrack.UtilityCollection;
 using ScholarTrack.ViewModels;
+using ScholarTrack.ViewModels.Lists;
 
 namespace ScholarTrack.Models
 {
-    public class Subject : ElementBase, IElement, IGradable, ICloneable
+    public class Subject : IElement, IGradable, ICloneable
     {
         private readonly Color _additionalInfoColor = Color.Parse("#999999");
         private readonly Color _lightBackground = Color.Parse("#c7cad1");
+        
+        private UserControl? _buttonControlTemplate;
 
         public Subject(string name, float weighting, string subjectColorHex, bool counts)
         {
@@ -96,6 +99,17 @@ namespace ScholarTrack.Models
         
         private Color AdditionalInfoDark => _additionalInfoColor.DarkenColor(0.3f);
         private Color AdditionalInfoLight => _additionalInfoColor.BrightenColor(0.3f);
+        
+        private UserControl? ButtonControlTemplate
+        {
+            get => _buttonControlTemplate;
+            set
+            {
+                _buttonControlTemplate = value;
+                var viewModel = SubjectListViewModel.Instance;
+                viewModel?.UpdateVisualOnChange(viewModel, MainWindowViewModel.CurrentYear?.Subjects);
+            }
+        }
 
         public IEnumerable<T>? Duplicate<T>() where T : IElement
         {
@@ -110,6 +124,12 @@ namespace ScholarTrack.Models
         }
 
         public object Clone() => this.MemberwiseClone();
+
+        public void ChangeButtonStyle(Type styleType)
+        {
+            if (Activator.CreateInstance(styleType) is UserControl control)
+                ButtonControlTemplate = control;
+        }
 
         internal void Edit(string newName, float newWeighting, string newSubjectColorHex, bool counts)
         {
