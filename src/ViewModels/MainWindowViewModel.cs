@@ -6,6 +6,7 @@ using Avalonia.Controls;
 using Avalonia.Media;
 using ScholarTrack.Interfaces;
 using ScholarTrack.Models;
+using ScholarTrack.Models.Settings;
 using ScholarTrack.ViewModels.AddPages;
 using ScholarTrack.ViewModels.BaseClasses;
 using ScholarTrack.ViewModels.Lists;
@@ -24,6 +25,7 @@ namespace ScholarTrack.ViewModels
             Instance = this;
             
             DataManager.LoadData();
+            SettingsManager.LoadSettings();
             InitializeTopbarElements();
             
             _content = Content = new YearListViewModel(DataManager.SchoolYears!);
