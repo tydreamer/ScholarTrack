@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.IO;
 using System.Text.Json;
+using ScholarTrack.UtilityCollection;
 
 namespace ScholarTrack.Models
 {
@@ -8,8 +9,7 @@ namespace ScholarTrack.Models
     {
         internal static List<SchoolYear> SchoolYears { get; private set; } = new();
         
-        private static string FilePath 
-            => Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location) + "/SchoolYears.json";
+        private static string FilePath => Utilities.FilesParentPath + "/SchoolYears.json";
 
         internal static void LoadData()
         {
