@@ -2,18 +2,16 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.Text.Json.Serialization;
-using Avalonia.Controls;
+using ScholarTrack.Enums;
 using ScholarTrack.Interfaces;
 using ScholarTrack.Models.Settings;
 using ScholarTrack.ViewModels;
-using ScholarTrack.ViewModels.Lists;
+using ScholarTrack.Views.Lists.ElementButtonControls;
 
 namespace ScholarTrack.Models
 {
     public class Grade : IElement, IGradable, ICloneable
     {
-        private UserControl? _buttonControlTemplate;
-        
         [JsonConstructor]
         public Grade(string name, float gradeValue, float weighting, DateTime date, bool counts)
         {
@@ -23,9 +21,8 @@ namespace ScholarTrack.Models
             this.Date = date;
             this.Counts = counts;
             
-            var type = SettingsManager.Settings?.GradeButtonStyle;
-            if(type is not null && Activator.CreateInstance(type) is UserControl control)
-                this.ButtonControlTemplate = control;
+            var isGrid = SettingsManager.Settings?.GradeButtonStyle == SelectedButtonStyle.Grid;
+            this.ButtonStyle = isGrid ? new GridButton(this) : new ListButton(this);
         }
         
         [JsonInclude]
@@ -45,20 +42,12 @@ namespace ScholarTrack.Models
 
         [JsonIgnore] 
         public int ElementCount => 1; // TODO: When partial grades are implemented, return count of grades
+        
+        [JsonIgnore] 
+        public ButtonStyleBase? ButtonStyle { get; internal set; }
 
         internal float RoundedGrade => (float)Math.Round(GradeValue, 2);
         internal string DateString => Date.ToString("dd.MM.yyyy", CultureInfo.CurrentCulture);
-        
-        private UserControl? ButtonControlTemplate
-        {
-            get => _buttonControlTemplate;
-            set
-            {
-                _buttonControlTemplate = value;
-                var viewModel = GradeListViewModel.Instance;
-                viewModel?.UpdateVisualOnChange(viewModel, MainWindowViewModel.CurrentSubject?.Grades);
-            }
-        }
 
         public IEnumerable<T>? Duplicate<T>() where T : IElement
         {
@@ -71,12 +60,6 @@ namespace ScholarTrack.Models
         }
 
         public object Clone() => this.MemberwiseClone();
-        
-        public void ChangeButtonStyle(Type styleType)
-        {
-            if (Activator.CreateInstance(styleType) is UserControl control)
-                ButtonControlTemplate = control;
-        }
 
         internal void Edit(string newName, float newGrade, float newWeighting, DateTime newDate, bool counts)
         {

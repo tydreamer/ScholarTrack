@@ -1,5 +1,4 @@
 using System;
-using Avalonia.Controls;
 using ScholarTrack.Interfaces;
 
 namespace ScholarTrack.ViewModels.BaseClasses
