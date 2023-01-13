@@ -5,7 +5,6 @@ using ScholarTrack.Interfaces;
 using ScholarTrack.Models;
 using ScholarTrack.ViewModels.BaseClasses;
 using ScholarTrack.ViewModels.Lists;
-using ReactiveUI;
 
 namespace ScholarTrack.ViewModels.AddPages
 {

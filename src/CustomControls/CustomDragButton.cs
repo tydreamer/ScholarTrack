@@ -3,7 +3,7 @@ using Avalonia.Controls;
 using Avalonia.Input;
 using Avalonia.Styling;
 
-namespace ScholarTrack.Views.CustomControls
+namespace ScholarTrack.CustomControls
 {
     public sealed class CustomDragButton : Button, IStyleable
     {
