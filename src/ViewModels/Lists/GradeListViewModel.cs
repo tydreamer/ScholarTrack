@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using ScholarTrack.ExtensionCollection;
 using ScholarTrack.Interfaces;
 using ScholarTrack.Models;
 using ScholarTrack.ViewModels.AddPages;
@@ -64,7 +63,7 @@ namespace ScholarTrack.ViewModels.Lists
             if (currentSubject is null)
                 return;
             
-            currentSubject.Grades.SafeRemove(grade);
+            currentSubject.Grades.Remove(grade);
             UpdateVisualOnChange(this, currentSubject.Grades);
         }
         
@@ -78,7 +77,7 @@ namespace ScholarTrack.ViewModels.Lists
             _targetGradeWindowModel.ConfigureViewModels(Items);
             window.DataContext = _targetGradeWindowModel;
             
-            ShowDialog(window, MainWindowInstance, this, 0);
+            ShowDialog(window, MainWindowInstance, this);
         }
     }
 }

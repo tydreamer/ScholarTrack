@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using ScholarTrack.ExtensionCollection;
 using ScholarTrack.Interfaces;
 using ScholarTrack.Models;
 using ScholarTrack.ViewModels.AddPages;
@@ -62,7 +61,7 @@ namespace ScholarTrack.ViewModels.Lists
             if (currentYear is null)
                 return;
             
-            currentYear.Subjects.SafeRemove(subject);
+            currentYear.Subjects.Remove(subject);
             UpdateVisualOnChange(this, currentYear.Subjects);
         }
     }

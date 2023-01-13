@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using ScholarTrack.ExtensionCollection;
 using ScholarTrack.Interfaces;
 using ScholarTrack.Models;
 using ScholarTrack.ViewModels.AddPages;
@@ -57,7 +56,7 @@ namespace ScholarTrack.ViewModels.Lists
         
         private void RemoveElement(SchoolYear year)
         {
-            DataManager.SchoolYears.SafeRemove(year);
+            DataManager.SchoolYears.Remove(year);
             UpdateVisualOnChange(this, DataManager.SchoolYears);
         }
     }
