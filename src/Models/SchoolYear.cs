@@ -8,11 +8,14 @@ using ScholarTrack.Interfaces;
 using ScholarTrack.Models.Settings;
 using ScholarTrack.UtilityCollection;
 using ScholarTrack.Views.Lists.ElementButtonControls;
+using ReactiveUI;
 
 namespace ScholarTrack.Models
 {
-    public class SchoolYear : IElement, ICloneable
+    public class SchoolYear : ReactiveObject, IElement, ICloneable
     {
+        private ButtonStyleBase? _buttonStyle;
+        
         public SchoolYear(string name)
         {
             this.Name = name;
@@ -33,8 +36,12 @@ namespace ScholarTrack.Models
         [JsonInclude] 
         public List<Subject> Subjects { get; private set; } = new();
 
-        [JsonIgnore] 
-        public ButtonStyleBase? ButtonStyle { get; internal set; }
+        [JsonIgnore]
+        public ButtonStyleBase? ButtonStyle
+        {
+            get => _buttonStyle;
+            internal set => this.RaiseAndSetIfChanged(ref _buttonStyle, value);
+        }
 
         internal float Average => Utilities.GetAverage(Subjects, true);
 

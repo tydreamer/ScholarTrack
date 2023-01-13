@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -11,6 +12,7 @@ using ScholarTrack.ViewModels.AddPages;
 using ScholarTrack.ViewModels.BaseClasses;
 using ScholarTrack.ViewModels.Lists;
 using ScholarTrack.Views.AddPages;
+using ScholarTrack.Views.Lists.ElementButtonControls;
 using ReactiveUI;
 
 namespace ScholarTrack.ViewModels
@@ -166,6 +168,41 @@ namespace ScholarTrack.ViewModels
                 viewModel.CurrentAddWindow = window;
 
             return ShowDialog(window, MainWindowInstance, this, 0);
+        }
+
+        // TODO: This is horrible, but I'm not really able to use the interface out of the box. I'll have to figure out something...
+        private void ChangeView(byte view)
+        {
+            switch (_content)
+            {
+                case YearListViewModel yearViewModel:
+                    var years = yearViewModel.Items;
+                    if (years is null)
+                        return;
+
+                    foreach (var year in years)
+                        year.ButtonStyle = view == 0 ? new GridButton(year) : new ListButton(year);
+                    
+                    break;
+                case SubjectListViewModel subjectViewModel:
+                    var subjects = subjectViewModel.Items;
+                    if (subjects is null)
+                        return;
+
+                    foreach (var year in subjects)
+                        year.ButtonStyle = view == 0 ? new GridButton(year) : new ListButton(year);
+                    
+                    break;
+                case GradeListViewModel gradeViewModel:
+                    var grades = gradeViewModel.Items;
+                    if (grades is null)
+                        return;
+
+                    foreach (var year in grades)
+                        year.ButtonStyle = view == 0 ? new GridButton(year) : new ListButton(year);
+                    
+                    break;
+            }
         }
     }
 }

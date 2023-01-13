@@ -11,13 +11,16 @@ using ScholarTrack.Models.Settings;
 using ScholarTrack.UtilityCollection;
 using ScholarTrack.ViewModels;
 using ScholarTrack.Views.Lists.ElementButtonControls;
+using ReactiveUI;
 
 namespace ScholarTrack.Models
 {
-    public class Subject : IElement, IGradable, ICloneable
+    public class Subject : ReactiveObject, IElement, IGradable, ICloneable
     {
         private readonly Color _additionalInfoColor = Color.Parse("#999999");
         private readonly Color _lightBackground = Color.Parse("#c7cad1");
+        
+        private ButtonStyleBase? _buttonStyle;
 
         public Subject(string name, float weighting, string subjectColorHex, bool counts)
         {
@@ -58,8 +61,12 @@ namespace ScholarTrack.Models
         [JsonIgnore]
         public int ElementCount => Grades.Count;
         
-        [JsonIgnore] 
-        public ButtonStyleBase? ButtonStyle { get; internal set; }
+        [JsonIgnore]
+        public ButtonStyleBase? ButtonStyle
+        {
+            get => _buttonStyle;
+            internal set => this.RaiseAndSetIfChanged(ref _buttonStyle, value);
+        }
 
         internal Color SubjectColor => Color.Parse(SubjectColorHex);
         internal SolidColorBrush TitleBrush => 
