@@ -24,7 +24,6 @@ namespace ScholarTrack.ViewModels
         {
             Instance = this;
             
-            DataManager.LoadData();
             SettingsManager.LoadSettings();
             InitializeTopbarElements();
             

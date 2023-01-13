@@ -24,6 +24,8 @@ namespace ScholarTrack.Models.Settings
                 Converters = { new JsonStringEnumConverter(JsonNamingPolicy.CamelCase) }
             };
             Settings = JsonSerializer.Deserialize<Preferences>(content, options);
+            
+            DataManager.LoadData();
         }
 
         internal static void SaveSettings()
