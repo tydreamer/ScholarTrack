@@ -62,7 +62,8 @@ namespace ScholarTrack.ViewModels.Lists
                 return;
             
             currentYear.Subjects.Remove(subject);
-            UpdateVisualOnChange(this, currentYear.Subjects);
+            Items?.Remove(subject);
+            UpdateVisualOnChange();
         }
     }
 }

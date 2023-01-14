@@ -64,7 +64,8 @@ namespace ScholarTrack.ViewModels.Lists
                 return;
             
             currentSubject.Grades.Remove(grade);
-            UpdateVisualOnChange(this, currentSubject.Grades);
+            Items?.Remove(grade);
+            UpdateVisualOnChange();
         }
         
         private void OpenTargetGradeCalc()

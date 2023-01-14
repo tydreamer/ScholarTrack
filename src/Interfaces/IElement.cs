@@ -8,6 +8,6 @@ namespace ScholarTrack.Interfaces
         string Name { get; }
         ButtonStyleBase? ButtonStyle { get; set; }
 
-        IEnumerable<T>? Duplicate<T>() where T : IElement;
+        T? Duplicate<T>() where T : class, IElement;
     }
 }
