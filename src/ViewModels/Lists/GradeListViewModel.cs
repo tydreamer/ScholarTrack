@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using ScholarTrack.Interfaces;
-using ScholarTrack.Models;
+using ScholarTrack.Models.Elements;
 using ScholarTrack.ViewModels.AddPages;
 using ScholarTrack.ViewModels.BaseClasses;
 using ScholarTrack.ViewModels.TargetGrade;

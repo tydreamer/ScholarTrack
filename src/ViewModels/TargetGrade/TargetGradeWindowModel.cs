@@ -5,8 +5,7 @@ using System.Linq;
 using Avalonia.Media;
 using ScholarTrack.ExtensionCollection;
 using ScholarTrack.Interfaces;
-using ScholarTrack.Models;
-using ScholarTrack.UtilityCollection;
+using ScholarTrack.Models.Elements;
 using ScholarTrack.ViewModels.BaseClasses;
 using ReactiveUI;
 

@@ -10,7 +10,7 @@ using ScholarTrack.UtilityCollection;
 using ScholarTrack.Views.Lists.ElementButtonControls;
 using ReactiveUI;
 
-namespace ScholarTrack.Models
+namespace ScholarTrack.Models.Elements
 {
     public class SchoolYear : ReactiveObject, IElement
     {

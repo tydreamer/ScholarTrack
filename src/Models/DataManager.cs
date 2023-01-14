@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.IO;
 using System.Text.Json;
+using ScholarTrack.Models.Elements;
 using ScholarTrack.UtilityCollection;
 
 namespace ScholarTrack.Models

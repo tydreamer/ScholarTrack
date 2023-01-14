@@ -8,7 +8,7 @@ using ScholarTrack.ViewModels;
 using ScholarTrack.Views.Lists.ElementButtonControls;
 using ReactiveUI;
 
-namespace ScholarTrack.Models
+namespace ScholarTrack.Models.Elements
 {
     public class Grade : ReactiveObject, IElement, IGradable, ICloneable
     {

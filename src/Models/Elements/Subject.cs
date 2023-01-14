@@ -13,7 +13,7 @@ using ScholarTrack.ViewModels;
 using ScholarTrack.Views.Lists.ElementButtonControls;
 using ReactiveUI;
 
-namespace ScholarTrack.Models
+namespace ScholarTrack.Models.Elements
 {
     public class Subject : ReactiveObject, IElement, IGradable, ICloneable
     {

@@ -7,6 +7,7 @@ using Avalonia.Media;
 using ScholarTrack.Enums;
 using ScholarTrack.Interfaces;
 using ScholarTrack.Models;
+using ScholarTrack.Models.Elements;
 using ScholarTrack.Models.Settings;
 using ScholarTrack.ViewModels.AddPages;
 using ScholarTrack.ViewModels.BaseClasses;
@@ -29,7 +30,7 @@ namespace ScholarTrack.ViewModels
             SettingsManager.LoadSettings();
             InitializeTopbarElements();
             
-            _content = Content = new YearListViewModel(DataManager.SchoolYears!);
+            _content = Content = new YearListViewModel(DataManager.SchoolYears);
             _views.Add(_content);
             _content.ChangeTopbar();
         }

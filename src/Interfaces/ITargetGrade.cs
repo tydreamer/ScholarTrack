@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using ScholarTrack.Models;
+using ScholarTrack.Models.Elements;
 
 namespace ScholarTrack.Interfaces
 {

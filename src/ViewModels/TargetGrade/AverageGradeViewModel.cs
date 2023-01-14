@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using ScholarTrack.Interfaces;
-using ScholarTrack.Models;
+using ScholarTrack.Models.Elements;
 using ScholarTrack.UtilityCollection;
 using ScholarTrack.ViewModels.BaseClasses;
 using ReactiveUI;

@@ -1,6 +1,7 @@
 ﻿using Avalonia.Media;
 using ScholarTrack.Interfaces;
 using ScholarTrack.Models;
+using ScholarTrack.Models.Elements;
 using ScholarTrack.ViewModels.BaseClasses;
 using ScholarTrack.ViewModels.Lists;
 

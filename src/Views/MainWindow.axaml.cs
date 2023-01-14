@@ -3,6 +3,7 @@ using Avalonia.Controls;
 using Avalonia.Input;
 using Avalonia.Markup.Xaml;
 using ScholarTrack.Models;
+using ScholarTrack.Models.Elements;
 using ScholarTrack.ViewModels;
 using ScholarTrack.ViewModels.Lists;
 

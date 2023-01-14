@@ -1,5 +1,5 @@
 using ScholarTrack.Interfaces;
-using ScholarTrack.Models;
+using ScholarTrack.Models.Elements;
 
 namespace ScholarTrack.Views.Lists.ElementButtonControls
 {
