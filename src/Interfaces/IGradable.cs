@@ -1,8 +1,10 @@
 ﻿namespace ScholarTrack.Interfaces
 {
-    public interface IGradable : ISimpleGradable
+    public interface IGradable
     {
+        float GradeValue { get; }
         float Weighting { get; }
         bool Counts { get; }
+        int ElementCount { get; }
     }
 }
