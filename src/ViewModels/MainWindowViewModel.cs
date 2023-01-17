@@ -65,6 +65,8 @@ namespace ScholarTrack.ViewModels
 
             this.CurrentGradables = items;
         }
+
+        internal void UpdateAverage() => this.RaisePropertyChanged(nameof(CurrentAverage));
         
         private static void EditElement<TElement, TViewModel>(TElement element, TViewModel? viewModel, Window? window) 
             where TElement : IElement where TViewModel : AddViewModelBase, IAddViewModel<TElement>
