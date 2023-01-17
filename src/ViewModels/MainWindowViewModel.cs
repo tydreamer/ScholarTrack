@@ -7,7 +7,6 @@ using ScholarTrack.Interfaces;
 using ScholarTrack.Models;
 using ScholarTrack.Models.Elements;
 using ScholarTrack.Models.Settings;
-using ScholarTrack.UtilityCollection;
 using ScholarTrack.ViewModels.AddPages;
 using ScholarTrack.ViewModels.BaseClasses;
 using ScholarTrack.ViewModels.Lists;
@@ -20,7 +19,6 @@ namespace ScholarTrack.ViewModels
     public class MainWindowViewModel : ViewModelBase
     {
         private ListViewModelBase _content;
-        private IEnumerable<ISimpleGradable> _currentGradables;
 
         public MainWindowViewModel()
         {
@@ -31,8 +29,6 @@ namespace ScholarTrack.ViewModels
             
             _content = Content = new YearListViewModel(DataManager.SchoolYears);
             _content.ChangeTopbar();
-
-            _currentGradables = DataManager.SchoolYears;
         }
 
         internal static MainWindowViewModel? Instance { get; private set; }
@@ -44,18 +40,6 @@ namespace ScholarTrack.ViewModels
             get => _content;
             private set => this.RaiseAndSetIfChanged(ref _content, value);
         }
-
-        internal IEnumerable<ISimpleGradable> CurrentGradables
-        {
-            get => _currentGradables;
-            set
-            {
-                _currentGradables = value;
-                this.RaisePropertyChanged(nameof(AverageGrade));
-            }
-        }
-
-        private float AverageGrade => Utilities.GetAverage(_currentGradables, true);
 
         internal void SwitchPage<T, TItems>(IEnumerable<TItems> items) where T : ListViewModelBase, IListViewModel<TItems> 
             where TItems : class, IElement
