@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using ScholarTrack.Enums;
 using ScholarTrack.Interfaces;
 using ScholarTrack.Models.Elements;
+using ScholarTrack.Models.Settings;
 using ScholarTrack.ViewModels.AddPages;
 using ScholarTrack.ViewModels.BaseClasses;
 using ScholarTrack.Views.AddPages;
@@ -22,6 +24,9 @@ namespace ScholarTrack.ViewModels.Lists
             Instance = this;
             AddPageType = typeof(AddSubjectWindow);
             AddViewModelType = typeof(AddSubjectViewModel);
+            
+            bool isGrid = SettingsManager.Settings?.SubjectButtonStyle == SelectedButtonStyle.Grid;
+            ChangeButtonView(isGrid);
         }
 
 #pragma warning disable 618

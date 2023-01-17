@@ -39,6 +39,6 @@ namespace ScholarTrack.ViewModels.BaseClasses
                 throw new ArgumentNullException();
         }
 
-        internal void ChangeButtonView(byte view) => IsViewGrid = view == 0;
+        internal void ChangeButtonView(bool isGrid) => IsViewGrid = isGrid;
     }
 }
