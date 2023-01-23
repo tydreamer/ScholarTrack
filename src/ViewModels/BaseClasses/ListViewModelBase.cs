@@ -38,9 +38,7 @@ namespace ScholarTrack.ViewModels.BaseClasses
             if (TopbarTexts is null)
                 throw new ArgumentNullException();
         }
-
-        protected abstract void ChangeButtonView();
-
-        internal void ChangeButtonView(bool isGrid) => IsViewGrid = isGrid;
+        
+        protected internal void ChangeButtonView(bool isGrid) => IsViewGrid = isGrid;
     }
 }
