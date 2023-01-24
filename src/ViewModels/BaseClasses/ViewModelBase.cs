@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.ComponentModel;
 using Avalonia.Controls;
-using ScholarTrack.Interfaces;
 using ScholarTrack.Models;
 using ScholarTrack.Views;
 using ReactiveUI;

@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using Avalonia;
 using Avalonia.Media;
-using ScholarTrack.ExtensionCollection;
 
 namespace ScholarTrack.UtilityCollection
 {
@@ -85,7 +84,7 @@ namespace ScholarTrack.UtilityCollection
         public static LinearGradientBrush CreateLinearGradientBrush(RelativePoint startPoint, RelativePoint endPoint, 
             GradientStops gradientStops)
         {
-            return new LinearGradientBrush()
+            return new LinearGradientBrush
             {
                 StartPoint = startPoint,
                 EndPoint = endPoint,
