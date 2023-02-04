@@ -1,7 +1,7 @@
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
 
-namespace ScholarTrack.Views.Lists.Dialogs
+namespace ScholarTrack.Views.Dialogs
 {
     public class ConfirmationDialogView : UserControl
     {
