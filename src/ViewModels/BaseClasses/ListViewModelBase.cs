@@ -1,5 +1,7 @@
 using System;
 using Avalonia.Media;
+using ScholarTrack.Enums;
+using ScholarTrack.ExtensionCollection;
 using ScholarTrack.Interfaces;
 using ScholarTrack.ViewModels.Dialogs;
 using ReactiveUI;
@@ -43,9 +45,10 @@ namespace ScholarTrack.ViewModels.BaseClasses
             viewModel?.Items?.Add(duplicate);
         }
 
-        protected void RemoveElement(IElement element, string elementType, Action confirmAction)
+        protected void RemoveElement(IElement element, ElementType elementType, Action confirmAction)
         {
-            string dialogTitle = $"Do you really want to remove the {elementType} \"{element.Name}\"?";
+            string elementTypeName = elementType.ToString().SplitCamelCase();
+            string dialogTitle = $"Do you really want to remove the {elementTypeName} \"{element.Name}\"?";
             CurrentDialog = new ConfirmationDialogViewModel(dialogTitle,
                 new[] {Color.Parse(""), Color.Parse("")},
                 new[] {Colors.White, Colors.White},

@@ -76,7 +76,7 @@ namespace ScholarTrack.ViewModels.Lists
                 Items?.Remove(subject);
                 UpdateVisualOnChange();
             };
-            base.RemoveElement(subject, "Subject", action);
+            base.RemoveElement(subject, Enums.ElementType.Subject, action);
         }
     }
 }

@@ -75,7 +75,7 @@ namespace ScholarTrack.ViewModels.Lists
                 Items?.Remove(year);
                 UpdateVisualOnChange();
             };
-            base.RemoveElement(year, "School Year", action);
+            base.RemoveElement(year, Enums.ElementType.SchoolYear, action);
         }
     }
 }
