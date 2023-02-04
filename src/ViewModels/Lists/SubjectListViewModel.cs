@@ -70,10 +70,13 @@ namespace ScholarTrack.ViewModels.Lists
         private void RemoveElement(Subject subject)
         {
             var currentYear = MainWindowViewModel.CurrentYear;
-
-            currentYear?.Subjects.Remove(subject);
-            Items?.Remove(subject);
-            UpdateVisualOnChange();
+            Action action = () =>
+            {
+                currentYear?.Subjects.Remove(subject);
+                Items?.Remove(subject);
+                UpdateVisualOnChange();
+            };
+            base.RemoveElement(subject, "Subject", action);
         }
     }
 }
