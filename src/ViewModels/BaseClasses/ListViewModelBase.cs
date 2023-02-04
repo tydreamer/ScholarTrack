@@ -1,5 +1,7 @@
 using System;
+using Avalonia.Media;
 using ScholarTrack.Interfaces;
+using ScholarTrack.ViewModels.Dialogs;
 using ReactiveUI;
 
 namespace ScholarTrack.ViewModels.BaseClasses
@@ -7,6 +9,7 @@ namespace ScholarTrack.ViewModels.BaseClasses
     public abstract class ListViewModelBase : ViewModelBase
     {
         private bool _isViewGrid;
+        private DialogBase? _currentDialog;
         
         protected internal Type? AddPageType { get; protected init; }
         protected internal Type? AddViewModelType { get; protected init; }
@@ -16,6 +19,12 @@ namespace ScholarTrack.ViewModels.BaseClasses
         {
             get => _isViewGrid;
             set => this.RaiseAndSetIfChanged(ref _isViewGrid, value);
+        }
+        
+        internal DialogBase? CurrentDialog
+        {
+            get => _currentDialog;
+            set => this.RaiseAndSetIfChanged(ref _currentDialog, value);
         }
 
         protected void DuplicateElement<T>(IElement element) where T : class, IElement
@@ -32,6 +41,16 @@ namespace ScholarTrack.ViewModels.BaseClasses
                 return;
             var viewModel = content as IListViewModel<T>;
             viewModel?.Items?.Add(duplicate);
+        }
+
+        protected virtual void RemoveElement(IElement element, string elementType, Action confirmAction)
+        {
+            string dialogTitle = $"Do you really want to remove the {elementType} \"{element.Name}\"?";
+            CurrentDialog = new ConfirmationDialogViewModel(dialogTitle,
+                new[] {Color.Parse(""), Color.Parse("")},
+                new[] {Colors.White, Colors.White},
+                new[] {"Remove", "Cancel"},
+                confirmAction);
         }
 
         protected internal virtual void ChangeTopbar()
