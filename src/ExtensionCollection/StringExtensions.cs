@@ -14,7 +14,7 @@ namespace ScholarTrack.ExtensionCollection
         public static string SplitCamelCase(this string input, string separator = " ")
         {
             var words = Regex.Split(input, "([A-Z][a-z]+)");
-            return string.Join(separator, words);
+            return string.Join(separator, words).Trim();
         }
     }
 }
