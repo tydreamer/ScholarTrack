@@ -2,6 +2,7 @@
 using System.ComponentModel;
 using Avalonia.Controls;
 using ScholarTrack.Models;
+using ScholarTrack.Models.Settings;
 using ScholarTrack.Views;
 using ReactiveUI;
 
@@ -10,8 +11,13 @@ namespace ScholarTrack.ViewModels.BaseClasses
     public abstract class ViewModelBase : ReactiveObject
     {
         protected MainWindow? MainWindowInstance { get; private set; }
+        protected Preferences? SettingsRef { get; }
+        
         protected Controls? TopbarTexts { get; private set; }
         protected internal Window? CurrentAddWindow { get; internal set; }
+
+        protected ViewModelBase() 
+            => this.SettingsRef = SettingsManager.Settings;
 
         protected void InitializeTopbarElements()
         {
