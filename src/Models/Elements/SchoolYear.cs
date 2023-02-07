@@ -11,7 +11,7 @@ using ReactiveUI;
 
 namespace ScholarTrack.Models.Elements
 {
-    public class SchoolYear : ReactiveObject, IElement, IGradable
+    public class SchoolYear : ColorableElement, IElement, IGradable
     {
         private const int MaxNameLength = 25;
         
@@ -19,7 +19,7 @@ namespace ScholarTrack.Models.Elements
         private List<Subject> _subjects = new();
         private ButtonStyleBase? _buttonStyle;
 
-        public SchoolYear(string name)
+        public SchoolYear(string name, string elementColorHex) : base(elementColorHex)
         {
             if (name.Length > MaxNameLength)
                 name = name.Substring(0, MaxNameLength);
@@ -30,7 +30,7 @@ namespace ScholarTrack.Models.Elements
         }
 
         [JsonConstructor]
-        public SchoolYear(string name, List<Subject> subjects) : this(name)
+        public SchoolYear(string name, string elementColorHex, List<Subject> subjects) : this(name, elementColorHex)
         {
             this.Subjects = subjects;
         }
@@ -91,6 +91,6 @@ namespace ScholarTrack.Models.Elements
 
         internal void Edit(string newName) => this.Name = newName;
         
-        private SchoolYear Clone() => new(_name, _subjects.Clone().ToList());
+        private SchoolYear Clone() => new(_name, ElementColorHex, _subjects.Clone().ToList());
     }
 }
