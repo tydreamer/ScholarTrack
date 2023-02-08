@@ -1,4 +1,5 @@
-﻿using Avalonia.Media;
+﻿using System.Linq;
+using Avalonia.Media;
 using ScholarTrack.ExtensionCollection;
 using ScholarTrack.Interfaces;
 using ScholarTrack.Models;
@@ -25,6 +26,10 @@ namespace ScholarTrack.ViewModels.AddPages
             EditedYear = year;
             EditPageText(AddPageAction.Edit, "School Year", year.Name);
             ElementName = year.Name;
+            
+            var colorRepresentation = ElementColorsCollection.FirstOrDefault(x => x.ElementColor.Equals(year.ElementColor));
+            if(colorRepresentation is not null)
+                ChangeColor(colorRepresentation);
         }
         
         protected internal override void EraseData()
