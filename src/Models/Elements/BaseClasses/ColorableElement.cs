@@ -30,6 +30,7 @@ namespace ScholarTrack.Models.Elements
 
                 this.RaisePropertyChanged(nameof(ElementColor));
                 this.RaisePropertyChanged(nameof(TitleBrush));
+                this.RaisePropertyChanged(nameof(BackgroundBrush));
                 this.RaisePropertyChanged(nameof(BackgroundBrushHover));
                 this.RaisePropertyChanged(nameof(AdditionalInfoColor));
             }
