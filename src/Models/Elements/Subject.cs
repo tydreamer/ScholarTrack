@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.Json.Serialization;
-using Avalonia;
-using Avalonia.Media;
 using ScholarTrack.Enums;
 using ScholarTrack.ExtensionCollection;
 using ScholarTrack.Interfaces;
