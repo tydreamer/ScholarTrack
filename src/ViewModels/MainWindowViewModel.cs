@@ -121,7 +121,10 @@ namespace ScholarTrack.ViewModels
         private void OpenYear(SchoolYear year)
         {
             if (TopbarTexts?[0] is TextBlock textBlock)
+            {
                 textBlock.Text = year.Name;
+                textBlock.Foreground = new SolidColorBrush(year.ElementColor);
+            }
             SwitchPage<SubjectListViewModel, Subject>(year.Subjects);
             CurrentYear = year;
         }
