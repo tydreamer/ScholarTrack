@@ -1,6 +1,7 @@
 ﻿using System.Globalization;
 using System.Linq;
 using Avalonia.Media;
+using ScholarTrack.Enums;
 using ScholarTrack.ExtensionCollection;
 using ScholarTrack.Interfaces;
 using ScholarTrack.Models.Elements;
