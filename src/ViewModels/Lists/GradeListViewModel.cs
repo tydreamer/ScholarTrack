@@ -5,6 +5,7 @@ using ScholarTrack.Enums;
 using ScholarTrack.Interfaces;
 using ScholarTrack.Models.Elements;
 using ScholarTrack.Models.Settings;
+using ScholarTrack.UtilityCollection;
 using ScholarTrack.ViewModels.AddPages;
 using ScholarTrack.ViewModels.BaseClasses;
 using ScholarTrack.ViewModels.TargetGrade;
@@ -93,7 +94,7 @@ namespace ScholarTrack.ViewModels.Lists
             _targetGradeWindowModel.ConfigureViewModels(Items);
             window.DataContext = _targetGradeWindowModel;
             
-            ShowDialog(window, MainWindowInstance, this);
+            Utilities.ShowDialog(window, MainWindowInstance);
         }
     }
 }
