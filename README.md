@@ -1,63 +1,73 @@
-# <span style="color:#009B72">ScholarTrack</span>
-<img src="Assets/Images/Logo.png" width="10%"></img>
+<p align="center">
+  <img src="Assets/Images/Logo.png" alt="ScholarTrack logo" width="120" />
+</p>
 
-A modern, highly customizable and extraordinarily feature-rich solution for storing, organizing and managing your school grades.
-This distinguishes it enormously from equivalent products. And... it's 100% **free** and **open-source**!
+<h1 align="center">ScholarTrack</h1>
 
-Keep track of all your grades, divided into different semesters and subjects, as well as averages and more information about your grades. 
-Organize your grades however you prefer it and let them get displayed according to your preferences. 
-Play around with different views, colors and plenty of settings.
+<p align="center">
+  <strong>Track school grades locally — semesters, subjects, weighted averages, and target-grade planning.</strong>
+</p>
 
-## A non-exhaustive list of the most important features
+<p align="center">
+  Free & open source · No account · No cloud · Built with <a href="https://avaloniaui.net/">Avalonia</a> & C#
+</p>
 
-Despite a very high freedom in terms of customization and functions, simplicity hasn't been omitted in the development of **ScholarTrack**. 
-If you like to keep it simple, this tool offers you everything you need. 
-If you need more than that, make use of the freedoms **ScholarTrack** offers you...
+---
 
-### Functions
-- <span style="color:#009B72">**Organize and split up:**</span> Divide your grades into subjects and these in turn into semesters.
-- <span style="color:#009B72">**Much more than just a grade-value:**</span> If only the grade and the name of a grade aren't enough for you,
-  how about specifying the **Date** of an exam as well as the **Weighting** (for grades and subjects)
-  and actually considering it in the average calculation?
-- <span style="color:#009B72">**Calculate Target-Grade:**</span> 
-You want to know how much you're supposed to learn for the next exam in order to reach a certain average? 
-Sure, let **ScholarTrack** calculate it for you.
-- <span style="color:#009B72">**Calculate Average:**</span> 
-The same goes for calculating the hypothetical average with your next assumed grade.
-- <span style="color:#009B72">**Many convenient features:**</span> Have you made yourself comfortable? 
-Duplicate, copy, paste, create and delete semesters, subjects or grades with a few mouse clicks within a fraction of a second.
-- <span style="color:#009B72">**Import/Export Data:**</span> Are you afraid of losing your data? 
-Don't fear anymore, export your semesters or let them be automatically exported at a certain specified time. (Coming soon)
-- <span style="color:#009B72">**Many settings:**</span> Customize your **ScholarTrack** with a wide range of settings. (Coming soon)
-- <span style="color:#009B72">**Order elements:**</span> Order the elements according to many different parameters 
-or just drag your own preferred order whenever you feel like it. (Coming soon)
-- <span style="color:#009B72">**Multi-Lingual:**</span> Do you speak English... oder Deutsch... ou Français?
-We offer you freedom in the choice of your favored language. (Coming soon)
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/61479436/193426577-dca54d26-b70f-491e-a4ff-dc58f1424d2c.png" width="32%" />
+  <img src="https://user-images.githubusercontent.com/61479436/193426574-2a2e512c-7e5c-40dc-ae75-1753b020369f.png" width="32%" />
+  <img src="https://user-images.githubusercontent.com/61479436/193426576-8da7174b-858d-4297-a3ce-5ffd3ef8fa80.png" width="32%" />
+</p>
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/61479436/193426571-38197e17-bd57-4cdf-8d50-516cc4a51fa5.png" width="32%" />
+  <img src="https://user-images.githubusercontent.com/61479436/193426570-d42fca39-9617-4dbd-a840-09cc756de82f.png" width="32%" />
+</p>
 
-### Look and Design
-- **<span style="color:#C7CAD1">S</span><span style="color:#FFAE03">o</span><span style="color:#EB8934">o</span><span style="color:#D64045">o</span>
-<span style="color:#FF85FB">c</span><span style="color:#A326C9">o</span><span style="color:#5F8BB0">l</span><span style="color:#6FB3BF">o</span><span style="color:#A5B1CC">r</span><span style="color:#009B72">f</span><span style="color:#74CC31">u</span><span style="color:#A8744F">l</span>:** 
-Assign a **color** to each semester and subject to recognize them at first glance.
-- <span style="color:#009B72">**Intuitive and simple, yet so powerful:**</span> Incredibly **intuitive** layout and navigation.
-- <span style="color:#009B72">**Different views:**</span> 
-Do you prefer to view your semesters, subjects or grades in a **grid**- or **list**-pattern? Whatever, you can decide for yourself!
-- <span style="color:#009B72">**Themes:**</span> Light Theme or Dark Theme? We say **both** and even **more**. (Coming soon)
+---
 
-### Privacy
-ScholarTrack collects no personal data and requires no internet connection for any of the features. It is a 100% "local"
-application without any hidden or visible data transfers. Solely your semesters/subjects/grades and settings are being saved
-**locally**, but are not visible to anyone except the user of the local device. Your grades are incognito, hooray!
+## Why ScholarTrack?
+
+ScholarTrack helps you **organize**, **calculate**, and **visualize** your grades without sending data anywhere. Structure work by **semester → subject → grade**, tune how averages are computed, and switch between grid and list views when you want a different perspective.
+
+| | |
+| --- | --- |
+| **Local-first** | Grades and settings stay on your device |
+| **Weighted averages** | Dates and weighting feed into calculations |
+| **Planning tools** | Target-grade and “what-if” average calculators |
+| **Personalized UI** | Colors per semester/subject, light & dark themes |
+
+---
+
+## Features
+
+### Core workflow
+- **Hierarchy** — School years (semesters), subjects, and individual grades in one place
+- **Rich grade entries** — Name, value, exam date, and weighting (grade and subject level)
+- **Quick editing** — Duplicate, copy, paste, create, and delete in a few clicks
+
+### Calculations
+- **Target grade** — See what you need on the next exam to hit a goal average
+- **Hypothetical average** — Preview the average if your next grade were X
+
+### Appearance
+- **Color coding** — Assign colors to semesters and subjects for at-a-glance recognition
+- **Grid or list** — Choose how years, subjects, and grades are displayed
+- **Themes** — Light and dark (more themes planned)
+
+### On the roadmap
+- Import / export and scheduled backups
+- Extended settings and sort / drag ordering
+- Additional languages (English, Deutsch, Français, …)
+
+---
+
+## Privacy
+
+ScholarTrack does **not** collect personal data and does **not** require an internet connection for normal use. There are no hidden sync or telemetry channels — only your academic data and preferences, stored **locally** on your machine.
+
+---
 
 ## Development
-This tool is being developed with the open-source .NET XAML UI-framework [Avalonia](https://avaloniaui.net/) and C#.
 
-## Gallery
-
-<img src="https://user-images.githubusercontent.com/61479436/157672689-d78c627d-b439-46b9-bdfa-55e2e8cfe610.png" width="23%"></img> 
-<img src="https://user-images.githubusercontent.com/61479436/157672835-1c4aeef5-f93b-4bbd-9d44-b09bfa678503.png" width="23%"></img> 
-<img src="https://user-images.githubusercontent.com/61479436/157672854-3f776feb-ece7-4da9-9b74-cadc0f138ba2.png" width="23%"></img> 
-<img src="https://user-images.githubusercontent.com/61479436/157672867-25618568-cd41-4e0b-a491-905cdbfc2b1f.png" width="23%"></img> 
-<img src="https://user-images.githubusercontent.com/61479436/157672894-89bb5d48-2c34-498e-adcb-bc2b6d075347.png" width="23%"></img> 
-<img src="https://user-images.githubusercontent.com/61479436/157672908-ca1b5783-cdaf-494d-9ae1-3ac09b9ef67c.png" width="23%"></img> 
-<img src="https://user-images.githubusercontent.com/61479436/157672917-a0a16ec1-6fce-4c91-bbbb-b44177f2856c.png" width="23%"></img> 
-<img src="https://user-images.githubusercontent.com/61479436/157672942-4a49dd95-3a26-4b6e-89f3-c4db13ab806a.png" width="23%"></img> 
+ScholarTrack is a desktop app using **[Avalonia](https://avaloniaui.net/)** and **.NET**. Contributions and issue reports are welcome.
