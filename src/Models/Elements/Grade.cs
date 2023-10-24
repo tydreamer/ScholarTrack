@@ -10,7 +10,7 @@ using ReactiveUI;
 
 namespace ScholarTrack.Models.Elements
 {
-    public class Grade : ReactiveObject, IElement, IGradable, ICloneable
+    public class Grade : ReactiveObject, IElement, ICloneable
     {
         private const int MaxNameLength = 35;
         

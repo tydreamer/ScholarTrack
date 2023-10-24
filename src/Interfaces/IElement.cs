@@ -2,7 +2,7 @@ using ScholarTrack.Views.Lists.ElementButtonControls;
 
 namespace ScholarTrack.Interfaces
 {
-    public interface IElement
+    public interface IElement : IGradable
     {
         string Name { get; }
         ButtonStyleBase? ButtonStyle { get; set; }
