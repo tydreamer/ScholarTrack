@@ -15,7 +15,7 @@ namespace ScholarTrack
     {
         private const string ResourcesPath = "avares://ScholarTrack/src/Resources/";
 
-        private ThemeMode _theme;
+        private ThemeMode _theme = ThemeMode.None;
         private StyleInclude? _currentThemeStyle;
         private readonly Dictionary<ThemeMode, Uri> _themeSourcesCollection = new()
         {
