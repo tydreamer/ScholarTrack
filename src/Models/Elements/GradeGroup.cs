@@ -22,6 +22,9 @@ namespace ScholarTrack.Models.Elements
             this.Grades = grades.ToList();
         }
 
+        [JsonIgnore]
+        public IGradesContainer? ParentContainer { get; set; }
+
         [JsonInclude]
         public List<Grade> Grades { get; set; }
 
