@@ -8,6 +8,7 @@ using ScholarTrack.Interfaces;
 using ScholarTrack.Models;
 using ScholarTrack.Models.Elements;
 using ScholarTrack.Models.Settings;
+using ScholarTrack.ResourcesNamespace;
 using ScholarTrack.UtilityCollection;
 using ScholarTrack.ViewModels.AddPages;
 using ScholarTrack.ViewModels.BaseClasses;
@@ -151,14 +152,14 @@ namespace ScholarTrack.ViewModels
                 return;
             textBlock.Text = element.Name;
 
-            if(element is ColorableElement colorable)
-                AdjustTopbarColor(colorable, textBlock);
+            ColorableElement? colorable = element as ColorableElement;
+            AdjustTopbarColor(textBlock, colorable);
         }
 
-        private void AdjustTopbarColor(ColorableElement element, TextBlock textBlock)
+        private void AdjustTopbarColor(TextBlock textBlock, ColorableElement? element)
         {
-            const float darkenFactor = 0.1f;
-            var color = element.ElementColor.DarkenColor(darkenFactor);
+            const float darkenFactor = 0.2f;
+            var color = (element?.ElementColor ?? Resources.CurrentTheme.ElementBackground).DarkenColor(darkenFactor);
             textBlock.Foreground = new SolidColorBrush(color);
         }
 
