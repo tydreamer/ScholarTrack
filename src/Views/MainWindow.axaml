@@ -7,7 +7,8 @@
         x:Class="ScholarTrack.Views.MainWindow"
         Icon="/Assets/Images/Logo.png"
         Title="ScholarTrack"
-        WindowStartupLocation="CenterScreen">
+        WindowStartupLocation="CenterScreen"
+        MinWidth="920" MinHeight="650">
 
     <Design.DataContext>
         <vm:MainWindowViewModel/>
