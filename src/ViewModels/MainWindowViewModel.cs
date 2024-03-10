@@ -39,7 +39,6 @@ namespace ScholarTrack.ViewModels
         }
 
         internal static MainWindowViewModel? Instance { get; private set; }
-        internal static Subject? CurrentSubject { get; set; }
         internal static SchoolYear? CurrentYear { get; set; }
         
         internal App? AppInstance { get; init; }
@@ -136,7 +135,6 @@ namespace ScholarTrack.ViewModels
         {
             AdjustTopbarText(subject, 2);
             GradeListViewModel viewModel = SwitchPage<GradeListViewModel, Grade>(subject.Grades, subject);
-            CurrentSubject = subject;
         }
         
         private void OpenYear(SchoolYear year)
